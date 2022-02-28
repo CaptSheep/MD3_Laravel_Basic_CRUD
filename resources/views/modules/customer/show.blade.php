@@ -12,7 +12,6 @@
 <table border="1" style="text-align: center">
     <thead>
     <tr>
-        <th>ID</th>
         <th>Customer Name</th>
         <th>Customer Phone Number</th>
         <th>Customer Email</th>
@@ -22,7 +21,6 @@
     <tbody>
     @foreach($customers as $customer)
         <tr>
-            <td>{{$customer->id}}</td>
             <td>{{$customer->name}}</td>
             <td>{{$customer->phone}}</td>
             <td>{{$customer->email}}</td>

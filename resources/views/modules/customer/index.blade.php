@@ -18,9 +18,9 @@
     </tr>
     </thead>
     <tbody>
-    @foreach($customers as $customer)
+    @foreach($customers as $key=> $customer)
         <tr>
-            <td>{{$customer->id}}</td>
+            <td>{{$key + 1}}</td>
             <td>{{$customer->name}}</td>
             <td><a href="{{route('show',$customer->id)}}">Customer Detail</a></td>
             <td><a href="{{route('edit',$customer->id)}}">Edit Customers</a></td>

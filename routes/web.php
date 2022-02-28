@@ -18,10 +18,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/index',[CustomerController::class,'index'])->name('index');
-Route::get('/create',[CustomerController::class,'create'])->name('createForm');
-Route::post('/create',[CustomerController::class,'store'])->name('store');
-Route::get('/index/{id}/detail',[CustomerController::class,'show'])->name('show');
-Route::get('/index/{id}/destroy',[CustomerController::class,'destroy'])->name('destroy');
-Route::get('/index/{id}/edit',[CustomerController::class,'edit'])->name('edit');
-Route::post('/index/{id}/update',[CustomerController::class,'update'])->name('update');
+Route::middleware('checkAuth')->group(function (){
+    Route::get('/index',[CustomerController::class,'index'])->name('index');
+    Route::get('/create',[CustomerController::class,'create'])->name('createForm');
+    Route::post('/create',[CustomerController::class,'store'])->name('store');
+    Route::get('/index/{id}/detail',[CustomerController::class,'show'])->name('show');
+    Route::get('/index/{id}/destroy',[CustomerController::class,'destroy'])->name('destroy');
+    Route::get('/index/{id}/edit',[CustomerController::class,'edit'])->name('edit');
+    Route::post('/index/{id}/update',[CustomerController::class,'update'])->name('update');
+});
+Route::get('/login')->name('showFormLogin');

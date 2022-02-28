@@ -3,6 +3,8 @@
 namespace App\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
+use App\Http\Middleware\CheckAuth;
+use App\Http\Middleware\CheckRegister;
 
 class Kernel extends HttpKernel
 {

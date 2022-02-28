@@ -10,6 +10,7 @@
 <body>
 <table border="1" style="text-align: center">
     <a href="{{route('createForm')}}">Create Customers</a>
+    <a href="{{route('logout')}}">Log out</a>
     <thead>
     <tr>
         <th>ID</th>

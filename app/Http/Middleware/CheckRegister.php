@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
-class CheckLogin
+class CheckRegister
 {
     /**
      * Handle an incoming request.

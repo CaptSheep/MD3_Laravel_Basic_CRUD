@@ -136,6 +136,11 @@
         <h1>Login</h1>
         <form method="post">
             <div class="txt_field">
+                <input type="text" required name="name" id="name">
+                <span></span>
+                <label>Customer Name</label>
+            </div>
+            <div class="txt_field">
                 <input type="text" required name="email" id="email">
                 <span></span>
                 <label>Customer Email</label>
@@ -156,7 +161,9 @@
                 <label>Confirm Password</label>
             </div>
             <input type="submit" value="Login">
-
+            <div class="signup_link">
+                <a href={{route('login')}}>Back</a>
+            </div>
         </form>
     </div>
 </body>

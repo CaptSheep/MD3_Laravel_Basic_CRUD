@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CustomerController;
 use Illuminate\Support\Facades\Route;
 
@@ -27,4 +28,8 @@ Route::middleware('checkAuth')->group(function (){
     Route::get('/index/{id}/edit',[CustomerController::class,'edit'])->name('edit');
     Route::post('/index/{id}/update',[CustomerController::class,'update'])->name('update');
 });
-Route::get('/login')->name('showFormLogin');
+Route::get('/login',[AuthController::class,'showFormLogin'])->name('showFormLogin');
+Route::post('/login',[AuthController::class,'login'])->name('login');
+Route::get('/register',[AuthController::class,'showFormRegister'])->name('showFormRegister');
+Route::post('/register',[AuthController::class,'register'])->name('register');
+Route::get('/logout',[AuthController::class,'logout'])->name('logout');

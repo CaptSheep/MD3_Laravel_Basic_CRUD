@@ -150,6 +150,7 @@
             <div class="signup_link">
                 Not a member? <a href="{{route('register')}}">Signup</a>
             </div>
+
         </form>
     </div>
 </body>

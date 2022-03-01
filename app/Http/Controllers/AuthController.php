@@ -18,14 +18,15 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
-        $user = $request->only('email','password');
+        $user = $request->only('email', 'password');
+//        dd($user);
         // dung attemp check xem user co hay khong
-        if(Auth::attempt($user)){
+        if (Auth::attempt($user)) {
+//            dd("Dang nhap thanh cong");
             return redirect()->route('index');
-        }
-        else{
-            Session::flash('msg','Sai tai khoan hoac mat khau');
-            return  redirect()->back();
+        } else {
+            Session::flash('msg', 'Sai tai khoan hoac mat khau');
+            return redirect()->back();
         }
     }
 
@@ -36,10 +37,10 @@ class AuthController extends Controller
 
     public function register(Request $request)
     {
-      $user = $request->only('name', 'phone','email','password');
-      $user["password"] = Hash::make($user["password"]); // Ma hoa password voi Hash
-      DB::table('customers')->insert($user);
-      return redirect()->route('login');
+        $user = $request->only('name', 'phone', 'email', 'password');
+        $user['password'] = Hash::make($user['password']); // Ma hoa password voi Hash
+        DB::table('customers')->insert($user);
+        return redirect()->route('login');
     }
 
     public function logout()

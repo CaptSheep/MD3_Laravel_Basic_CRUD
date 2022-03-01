@@ -135,9 +135,11 @@
 {{--    </script>--}}
     <div class="center">
         <h1>Login</h1>
-        <div>@if(\Illuminate\Support\Facades\Session::has('msg'))
-                <h3 style="color:red;">{{\Illuminate\Support\Facades\Session::get('msg')}}</h3>
-            @endif</div>
+        <div>
+            @if(\Illuminate\Support\Facades\Session::has('msg'))
+                <h4 style="color:red;">{{\Illuminate\Support\Facades\Session::get('msg')}}</h4>
+            @endif
+        </div>
             <div class="txt_field">
                 <input type="text" required name="email" id="email">
                 <span></span>

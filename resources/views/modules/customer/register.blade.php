@@ -124,7 +124,7 @@
     </style>
 </head>
 <body>
-<form action="{{route('login')}}" method="post">
+<form action="{{route('register')}}" method="post">
     @csrf
 {{--    <script>--}}
 {{--        let input = document.getElementById("name");--}}
@@ -140,7 +140,7 @@
                 <label>Customer Name</label>
             </div>
             <div class="txt_field">
-                <input type="text" required name="email" id="email">
+                <input type="email" required name="email" id="email">
                 <span></span>
                 <label>Customer Email</label>
             </div>
@@ -159,7 +159,7 @@
                 <span></span>
                 <label>Confirm Password</label>
             </div>
-            <input type="submit" value="Login">
+            <input type="submit" value="Register">
             <div class="signup_link">
                 <a href={{route('login')}}>Back</a>
             </div>

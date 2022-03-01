@@ -21,7 +21,7 @@ class AuthController extends Controller
         $user = $request->only('email','password');
         // dung attemp check xem user co hay khong
         if(Auth::attempt($user)){
-            return redirect(route('index'));
+            return redirect()->route('index');
         }
         else{
             Session::flash('msg','Sai tai khoan hoac mat khau');
@@ -37,7 +37,7 @@ class AuthController extends Controller
     public function register(Request $request)
     {
       $user = $request->only('name', 'phone','email','password');
-      $user["password"] = Hash::make($user["password"]);
+      $user["password"] = Hash::make($user["password"]); // Ma hoa password voi Hash
       DB::table('customers')->insert($user);
       return redirect()->route('login');
     }

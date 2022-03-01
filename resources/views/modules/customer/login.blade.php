@@ -124,17 +124,20 @@
     </style>
 </head>
 <body>
+
 <form action="{{route('login')}}" method="post">
     @csrf
-    <script>
-        let input = document.getElementById("name");
-        input.oninvalid = function(event) {
-            event.target.setCustomValidity('Username should only contain lowercase letters. e.g. john');
-        }
-    </script>
+{{--    <script>--}}
+{{--        let input = document.getElementById("name");--}}
+{{--        input.oninvalid = function(event) {--}}
+{{--            event.target.setCustomValidity('Username should only contain lowercase letters. e.g. john');--}}
+{{--        }--}}
+{{--    </script>--}}
     <div class="center">
         <h1>Login</h1>
-        <form method="post">
+        <div>@if(\Illuminate\Support\Facades\Session::has('msg'))
+                <h3 style="color:red;">{{\Illuminate\Support\Facades\Session::get('msg')}}</h3>
+            @endif</div>
             <div class="txt_field">
                 <input type="text" required name="email" id="email">
                 <span></span>
@@ -150,8 +153,8 @@
             <div class="signup_link">
                 Not a member? <a href="{{route('register')}}">Signup</a>
             </div>
-
-        </form>
     </div>
+        </form>
+
 </body>
 </html>

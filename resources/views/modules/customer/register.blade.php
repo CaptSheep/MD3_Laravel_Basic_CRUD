@@ -126,15 +126,14 @@
 <body>
 <form action="{{route('login')}}" method="post">
     @csrf
-    <script>
-        let input = document.getElementById("name");
-        input.oninvalid = function(event) {
-            event.target.setCustomValidity('Username should only contain lowercase letters. e.g. john');
-        }
-    </script>
+{{--    <script>--}}
+{{--        let input = document.getElementById("name");--}}
+{{--        input.oninvalid = function(event) {--}}
+{{--            event.target.setCustomValidity('Username should only contain lowercase letters. e.g. john');--}}
+{{--        }--}}
+{{--    </script>--}}
     <div class="center">
         <h1>Login</h1>
-        <form method="post">
             <div class="txt_field">
                 <input type="text" required name="name" id="name">
                 <span></span>
@@ -164,7 +163,8 @@
             <div class="signup_link">
                 <a href={{route('login')}}>Back</a>
             </div>
-        </form>
     </div>
+        </form>
+
 </body>
 </html>
